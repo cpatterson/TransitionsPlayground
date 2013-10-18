@@ -22,6 +22,7 @@
 		9D894B1117FDBA6F0091841B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D894AF017FDBA6E0091841B /* UIKit.framework */; };
 		9D894B1917FDBA6F0091841B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9D894B1717FDBA6F0091841B /* InfoPlist.strings */; };
 		9D894B1B17FDBA6F0091841B /* TransitionsPlaygroundTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D894B1A17FDBA6F0091841B /* TransitionsPlaygroundTests.m */; };
+		9D894B2617FDC3770091841B /* CPTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 9D894B2517FDC3770091841B /* CPTransitionAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		9D894B1617FDBA6F0091841B /* TransitionsPlaygroundTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TransitionsPlaygroundTests-Info.plist"; sourceTree = "<group>"; };
 		9D894B1817FDBA6F0091841B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9D894B1A17FDBA6F0091841B /* TransitionsPlaygroundTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransitionsPlaygroundTests.m; sourceTree = "<group>"; };
+		9D894B2417FDC3770091841B /* CPTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CPTransitionAnimator.h; sourceTree = "<group>"; };
+		9D894B2517FDC3770091841B /* CPTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CPTransitionAnimator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,8 @@
 				9D894B0217FDBA6F0091841B /* CPMasterViewController.m */,
 				9D894B0417FDBA6F0091841B /* CPDetailViewController.h */,
 				9D894B0517FDBA6F0091841B /* CPDetailViewController.m */,
+				9D894B2417FDC3770091841B /* CPTransitionAnimator.h */,
+				9D894B2517FDC3770091841B /* CPTransitionAnimator.m */,
 				9D894B0717FDBA6F0091841B /* Images.xcassets */,
 				9D894AF317FDBA6F0091841B /* Supporting Files */,
 			);
@@ -257,6 +262,7 @@
 			files = (
 				9D894B0617FDBA6F0091841B /* CPDetailViewController.m in Sources */,
 				9D894B0317FDBA6F0091841B /* CPMasterViewController.m in Sources */,
+				9D894B2617FDC3770091841B /* CPTransitionAnimator.m in Sources */,
 				9D894AF917FDBA6F0091841B /* main.m in Sources */,
 				9D894AFD17FDBA6F0091841B /* CPAppDelegate.m in Sources */,
 			);

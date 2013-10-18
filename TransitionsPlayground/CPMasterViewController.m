@@ -7,12 +7,15 @@
 //
 
 #import "CPMasterViewController.h"
-
 #import "CPDetailViewController.h"
+#import "CPTransitionAnimator.h"
 
-@interface CPMasterViewController () {
+@interface CPMasterViewController () <UINavigationControllerDelegate, UIViewControllerTransitioningDelegate>
+{
     NSMutableArray *_objects;
+	CGRect _selectedCellFrame;
 }
+@property (nonatomic, strong) CPTransitionAnimator* animator;
 @end
 
 @implementation CPMasterViewController
@@ -30,6 +33,8 @@
 
 	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 	self.navigationItem.rightBarButtonItem = addButton;
+
+	self.navigationController.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -104,10 +109,25 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
+		_selectedCellFrame = [self.view.window convertRect:[sender frame] fromView:self.tableView];
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
+		CPDetailViewController *detailViewController = segue.destinationViewController;
+        detailViewController.detailItem = object;
     }
+}
+
+#pragma mark - UINavigationControllerDelegate methods
+
+- (id <UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)nav
+                                   animationControllerForOperation:(UINavigationControllerOperation)operation
+                                                fromViewController:(UIViewController *)from
+                                                  toViewController:(UIViewController *)to
+{
+	self.animator = [CPTransitionAnimator new];
+	self.animator.startFrame = _selectedCellFrame;
+	self.animator.popping = (operation == UINavigationControllerOperationPop);
+	return self.animator;
 }
 
 @end
