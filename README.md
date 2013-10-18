@@ -5,7 +5,7 @@ A modification of the master-detail Xcode template to
 provide a custom transition animation from a table view cell to the
 detail view using the new view controller transitions APIs in iOS 7.
 
-### Differences from the Xcode Master-Detail iOS Project Template
+### Differences from the Xcode 5 Master-Detail iOS Project Template
 
 - CPTransitionAnimator class added to provide the custom transition animation.
 
