@@ -124,9 +124,14 @@
                                                 fromViewController:(UIViewController *)from
                                                   toViewController:(UIViewController *)to
 {
+	// Instantiate the animator object
 	self.animator = [CPTransitionAnimator new];
+	
+	// Give it any contextual information it needs to do its job...
 	self.animator.startFrame = _selectedCellFrame;
 	self.animator.popping = (operation == UINavigationControllerOperationPop);
+	
+	// Return it
 	return self.animator;
 }
 
