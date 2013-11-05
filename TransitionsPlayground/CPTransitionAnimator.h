@@ -16,6 +16,7 @@
 
 // UIViewControllerAnimatedTransitioning methods
 - (NSTimeInterval)transitionDuration:(id <UIViewControllerContextTransitioning>)transitionContext;
+
 - (void)animateTransition:(id <UIViewControllerContextTransitioning>)transitionContext;
 
 // Custom methods
